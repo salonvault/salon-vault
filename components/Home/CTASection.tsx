@@ -20,6 +20,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { FormEvent, useState } from "react";
+import Reveal from "@/components/ui/reveal";
+import CountUp from "@/components/ui/count-up";
 
 // const contactScriptUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL || "";
 const contactScriptUrl = "https://script.google.com/macros/s/AKfycbzvZKIfgw0IhM0NeOO7RkoNywb_Ai7kkrAcTjp7rIsK5qOZhxWkatO5VgC8nKe9eYTl/exec";
@@ -211,16 +213,18 @@ export default function CTASection() {
                 <Sparkles className="h-3.5 w-3.5 fill-[var(--color-primary-1)]" />
                 Lets Work Together
               </p>
-              <h2 className="heading-h1 mt-5 max-w-[430px] !leading-[1.08]">
-                Ready to Fill Your Calendar with <span className="text-[var(--color-primary-1)]">More Bookings?</span>
-              </h2>
+              <Reveal>
+                <h2 className="heading-h1 mt-5 max-w-[430px] !leading-[1.08]">
+                  Ready to Fill Your Calendar with <span className="text-[var(--color-primary-1)]">More Bookings?</span>
+                </h2>
+              </Reveal>
               <p className="para-p1 mt-5 max-w-[360px]">
                 Tell us about your business and goals. We will create a custom plan to help you attract more clients and grow faster.
               </p>
 
               <div className="mt-7 grid gap-4">
                 {benefits.map(({ icon: Icon, title, text }) => (
-                  <div key={title} className="flex items-center gap-4">
+                  <div key={title} className="hover-lift flex items-center gap-4 rounded-[8px] p-2">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[var(--color-primary-1)] shadow-[0_10px_24px_rgba(17,17,17,0.06)]">
                       <Icon className="h-5 w-5" strokeWidth={1.9} />
                     </div>
@@ -239,12 +243,12 @@ export default function CTASection() {
                   ))}
                 </div>
                 <p className="para-p3">
-                  Join <span className="font-extrabold text-[var(--color-primary-1)]">500+</span> beauty businesses growing with our solutions.
+                  Join <span className="font-extrabold text-[var(--color-primary-1)]"><CountUp end={500} suffix="+" /></span> beauty businesses growing with our solutions.
                 </p>
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} noValidate className="rounded-[14px] border border-white/80 bg-white/88 p-5 shadow-[0_24px_70px_rgba(17,17,17,0.10)] backdrop-blur md:p-7">
+            <form onSubmit={handleSubmit} noValidate className="hover-lift rounded-[14px] border border-white/80 bg-white/88 p-5 shadow-[0_24px_70px_rgba(17,17,17,0.10)] backdrop-blur md:p-7">
               <div className="flex items-center gap-2">
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary-1)] text-white shadow-[0_12px_28px_rgba(232,93,117,0.25)]">
                   <CalendarDays className="h-6 w-6" strokeWidth={1.9} />

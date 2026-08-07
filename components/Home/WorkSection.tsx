@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import Reveal from "@/components/ui/reveal";
 
 const projects = [
   {
@@ -44,7 +45,7 @@ export default function WorkSection() {
       <div className="container">
         <div className="rounded-[12px] border border-[var(--color-bordercol)] bg-white px-5 py-7 shadow-[0_10px_28px_rgba(17,17,17,0.035)] md:px-8">
           <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
-            <div>
+            <Reveal>
               <p className="label-l1 text-[var(--color-primary-1)]">Our Work</p>
               <h2 className="heading-h2 mt-3">
                 Websites That Bring <span className="text-[var(--color-primary-1)]">Real Clients</span>
@@ -52,7 +53,7 @@ export default function WorkSection() {
               <p className="para-p2 mt-4 max-w-[470px]">
                 Custom-designed websites for salons and beauty businesses that look beautiful and drive results.
               </p>
-            </div>
+            </Reveal>
 
             <a
               href="#contact"
@@ -70,7 +71,7 @@ export default function WorkSection() {
             >
               {carouselProjects.map((project, index) => (
                 <div key={`${project.title}-${index}`} className="w-full shrink-0 px-0 md:w-1/3 md:px-3">
-                  <article className="overflow-hidden rounded-[10px] border border-[var(--color-bordercol)] bg-white shadow-[0_10px_26px_rgba(17,17,17,0.045)]">
+                  <article className="hover-lift overflow-hidden rounded-[10px] border border-[var(--color-bordercol)] bg-white shadow-[0_10px_26px_rgba(17,17,17,0.045)]">
                     <div className="relative aspect-[1.62] overflow-hidden bg-[var(--color-panel)]">
                       <Image
                         src={project.image}

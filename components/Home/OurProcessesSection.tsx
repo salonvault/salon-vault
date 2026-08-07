@@ -1,4 +1,5 @@
 import { CalendarCheck, MessageSquareText, MousePointerClick, UsersRound } from "lucide-react";
+import Reveal from "@/components/ui/reveal";
 
 
 
@@ -59,7 +60,7 @@ export default function OurProcessesSection() {
     <section id="our-processes" className=" py-6 md:py-8">
       <div className="container">
         <div className="rounded-[14px] border border-[var(--color-bordercol)] bg-white px-5 py-7 shadow-[0_12px_36px_rgba(17,17,17,0.035)] md:px-8 lg:px-9 lg:py-9">
-          <div className="max-w-[620px]">
+          <Reveal className="max-w-[720px]">
             <p className="label-l1 font-heading! text-[var(--color-primary-1)]">Our Process</p>
             <h2 className="heading-h2 mt-4 ">
               How We Turn Clicks Into <span className="text-[var(--color-primary-1)]">Booked Clients</span>
@@ -67,13 +68,13 @@ export default function OurProcessesSection() {
             <p className="para-p3 mt-4 max-w-[300px]">
               A proven system that transforms your website into a 24/7 client-generating machine.
             </p>
-          </div>
+          </Reveal>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-12">
             {steps.map(({ number, icon: Icon, title, subtitle, text }, index) => (
               <article
                 key={title}
-                className="relative rounded-[8px] border border-[var(--color-bordercol)] bg-white px-7 pb-7 pt-5 text-center shadow-[0_10px_28px_rgba(17,17,17,0.045)]"
+                className="hover-lift relative rounded-[8px] border border-[var(--color-bordercol)] bg-white px-7 pb-7 pt-5 text-center shadow-[0_10px_28px_rgba(17,17,17,0.045)]"
               >
                 <div className="absolute left-4 top-4 text-[20px] font-extrabold text-[var(--color-primary-1)]">{number}</div>
                 <div className="mx-auto mt-2 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-primary-3)]">

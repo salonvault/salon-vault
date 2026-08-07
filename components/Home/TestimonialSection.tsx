@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 import { useEffect, useState } from "react";
+import Reveal from "@/components/ui/reveal";
 
 const testimonials = [
   {
@@ -68,12 +69,12 @@ export default function TestimonialSection() {
       <div className="container">
         <div className="rounded-[12px] border border-[var(--color-bordercol)] bg-white px-5 py-7 shadow-[0_10px_28px_rgba(17,17,17,0.035)] md:px-8">
           <div className="flex items-start justify-between gap-5">
-            <div>
+            <Reveal>
               <p className="label-l1 text-[var(--color-primary-1)]">Our Clients Love Us</p>
               <h2 className="heading-h2 mt-3">
                 Real Stories from <span className="text-[var(--color-primary-1)]">Salon Owners</span>
               </h2>
-            </div>
+            </Reveal>
 
             <div className="hidden gap-3 md:flex">
               <button
@@ -102,7 +103,7 @@ export default function TestimonialSection() {
             >
               {carouselItems.map((testimonial, index) => (
                 <div key={`${testimonial.name}-${index}`} className="w-full shrink-0 px-0 md:w-1/3 md:px-4">
-                  <article className="min-h-[180px] rounded-[9px] border border-[var(--color-bordercol)] bg-white px-6 py-5 shadow-[0_10px_26px_rgba(17,17,17,0.045)]">
+                  <article className="hover-lift min-h-[180px] rounded-[9px] border border-[var(--color-bordercol)] bg-white px-6 py-5 shadow-[0_10px_26px_rgba(17,17,17,0.045)]">
                     <div className="flex gap-1 text-[#f5b43b]">
                       {Array.from({ length: 5 }).map((_, starIndex) => (
                         <Star key={starIndex} className="h-4 w-4 fill-current" strokeWidth={1.5} />

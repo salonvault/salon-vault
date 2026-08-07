@@ -1,4 +1,4 @@
-import { Inter, Bitter, DM_Mono,Bricolage_Grotesque ,Cormorant} from "next/font/google";
+import { Inter, Bitter,Afacad, DM_Mono,Bricolage_Grotesque ,Cormorant} from "next/font/google";
 
 export const body_font = Inter({
   variable: "--font-body",

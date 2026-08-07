@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight, Phone } from "lucide-react";
 import {  FiTrendingUp } from "react-icons/fi";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
+import Reveal from "@/components/ui/reveal";
 
 export default function Hero() {
   return (
@@ -13,11 +14,11 @@ export default function Hero() {
               WE HELP SALONS BOOK MORE CLIENTS
             </div>
 
-            <h1 className="heading-h1 mt-4 md:mt-4">
-              <span className="block font-normal! leading-[1]">Fill More Appointments With A Website               <span className=" text-[var(--color-primary-1)] ">That Actually Sells.</span></span>
-              
-
-            </h1>
+            <Reveal>
+              <h1 className="heading-h1 mt-4 md:mt-4">
+                <span className="block font-semibold! leading-[1]">Fill More Appointments With A Website               <span className=" text-[var(--color-primary-1)] ">That Actually Sells.</span></span>
+              </h1>
+            </Reveal>
 
             <p className="para-p1 mt-4 md:mt-6 max-w-[560px]">
               We build conversion-focused websites for salons that attract the right clients, build instant trust, and turn visitors into booked appointments consistently.
@@ -25,7 +26,7 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-row  gap-4">
               <a href="#contact" className="navy-button min-h-12 min-w-[166px]">
-                <span className="hidden md:flex">Book</span> Free Strategy Call
+                <span className="hidden md:flex -me-1">Book</span>Free Strategy Call
                 <Phone className="h-4 w-4 hidden md:flex" />
               </a>
               <a href="#our-work" className=" outline-button min-h-12 min-w-[178px] ">
@@ -39,7 +40,7 @@ export default function Hero() {
                 [VscWorkspaceTrusted , "Convert Visitors Into Bookings", "More Bookings. More Revenue"],
                 [FiTrendingUp, "Build Instant Trust Online", "Fill Empty Appointment Slots"],
               ].map(([Icon, title, text]) => (
-                <div className="flex items-start gap-3" key={title as string}>
+                <div className="hover-lift flex items-start gap-3 rounded-[8px] p-2" key={title as string}>
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white">
                     <Icon className="h-5 w-5 text-[var(--color-primary-1)]" />
                   </div>

@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { HiCheckBadge, HiMiniArrowTrendingUp, HiXCircle } from "react-icons/hi2";
+import CountUp from "@/components/ui/count-up";
+import Reveal from "@/components/ui/reveal";
 
 const beforeItems = ["Outdated Design", "Hard to Navigate", "No Online Booking", "Low Visibility", "Low Bookings"];
 const afterItems = ["Modern, Premium Design", "Seamless User Experience", "Online Booking System", "SEO Optimized", "More Bookings & Revenue"];
@@ -92,14 +94,16 @@ export default function RealResultsSection() {
 
           <div className="relative z-10 grid gap-5 md:grid-cols-[35fr_30fr_35fr] md:items-center">
             <div className="flex flex-col justify-center md:min-h-[380px] lg:min-h-[400px]">
-              <p className="label-l1 text-[var(--color-primary-1)]">Real Results</p>
-              <div className="mt-3 h-px w-18 bg-[var(--color-primary-1)]" />
-              <h2 className="mt-6 max-w-[270px] font-heading text-[clamp(28px,2.35vw,36px)] font-semibold leading-[1.16] text-[var(--color-foreground)]">
-                From Empty Slots to <span className="text-[var(--color-primary-1)]">Fully Booked Calendars</span>
-              </h2>
-              <p className="para-p2 mt-5 max-w-[240px]">
-                We don&apos;t just design websites. We design growth engines.
-              </p>
+              <Reveal>
+                <p className="label-l1 text-[var(--color-primary-1)]">Real Results</p>
+                <div className="mt-3 h-px w-18 bg-[var(--color-primary-1)]" />
+                <h2 className="heading-h2 mt-6 max-w-[360px]">
+                  From Empty Slots to <span className="text-[var(--color-primary-1)]">Fully Booked Calendars</span>
+                </h2>
+                <p className="para-p2 mt-5 max-w-[280px]">
+                  We don&apos;t just design websites. We design growth engines.
+                </p>
+              </Reveal>
               <div className="hidden md:flex mt-10 items-center gap-4 text-[13px] font-extrabold text-[var(--color-primary-1)]">
                 See the transformation
                
@@ -109,7 +113,7 @@ export default function RealResultsSection() {
               </div>
             </div>
 
-            <article className="rounded-[14px] border border-white/80 bg-white/64 px-4 pb-4 pt-4 shadow-[0_14px_32px_rgba(17,17,17,0.06)] backdrop-blur-xl md:mt-8">
+            <article className="hover-lift rounded-[14px] border border-white/80 bg-white/64 px-4 pb-4 pt-4 shadow-[0_14px_32px_rgba(17,17,17,0.06)] backdrop-blur-xl md:mt-8">
               <StatusPill variant="before" />
               <div className="">
                 <LaptopMockup variant="before" />
@@ -124,7 +128,7 @@ export default function RealResultsSection() {
               </div>
             </article>
 
-            <article className="rounded-[16px] border border-white/85 bg-white/82 px-4 pb-4 pt-4 shadow-[0_18px_44px_rgba(232,93,117,0.1)] backdrop-blur-xl lg:px-5">
+            <article className="hover-lift rounded-[16px] border border-white/85 bg-white/82 px-4 pb-4 pt-4 shadow-[0_18px_44px_rgba(232,93,117,0.1)] backdrop-blur-xl lg:px-5">
               <StatusPill variant="after" />
               <div className="relative">
                 <LaptopMockup variant="after" />
@@ -144,7 +148,7 @@ export default function RealResultsSection() {
                 </div>
                 <div>
                   <div className="text-[16px] font-extrabold text-[var(--color-primary-1)] md:text-[19px]">
-                    +183% <span className="text-[13px] text-[var(--color-ink-2)] md:text-[15px]">More Bookings</span>
+                    <CountUp end={183} prefix="+" suffix="%" /> <span className="text-[13px] text-[var(--color-ink-2)] md:text-[15px]">More Bookings</span>
                   </div>
                   <p className="para-p3 mt-0.5">Increased appointments in just 60 days</p>
                 </div>

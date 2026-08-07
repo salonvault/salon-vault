@@ -2,6 +2,7 @@
 
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
+import Reveal from "@/components/ui/reveal";
 
 const faqs = [
   {
@@ -58,7 +59,7 @@ function FAQItem({
   onToggle: () => void;
 }) {
   return (
-    <article className="overflow-hidden rounded-[10px] border border-[var(--color-bordercol)] bg-white shadow-[0_10px_26px_rgba(17,17,17,0.04)]">
+    <article className="hover-lift overflow-hidden rounded-[10px] border border-[var(--color-bordercol)] bg-white shadow-[0_10px_26px_rgba(17,17,17,0.04)]">
       <button
         type="button"
         onClick={onToggle}
@@ -94,7 +95,7 @@ export default function FAQs() {
     <section id="faq" className=" py-6 md:py-8">
       <div className="container">
         <div className="rounded-[12px] border border-[var(--color-bordercol)] bg-[linear-gradient(135deg,#ffffff_0%,#fff8fa_50%,#ffffff_100%)] px-5 py-7 shadow-[0_10px_28px_rgba(17,17,17,0.035)] md:px-8">
-          <div className="mx-auto max-w-[680px] text-center">
+          <Reveal className="mx-auto max-w-[780px] text-center">
             <p className="label-l1 text-[var(--color-primary-1)]">FAQ</p>
             <h2 className="heading-h2 mt-3">
               Questions Salon Owners <span className="text-[var(--color-primary-1)]">Ask Before Booking</span>
@@ -102,7 +103,7 @@ export default function FAQs() {
             <p className="para-p2 mx-auto mt-3 max-w-[540px]">
               Clear answers about websites, chatbots, booking systems, and custom salon software.
             </p>
-          </div>
+          </Reveal>
 
           <div className="mt-7 grid gap-3 lg:grid-cols-2">
             <div className="grid content-start gap-3">

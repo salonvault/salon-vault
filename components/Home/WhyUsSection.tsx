@@ -1,3 +1,5 @@
+import Reveal from "@/components/ui/reveal";
+
 type IconProps = {
   className?: string;
 };
@@ -105,12 +107,12 @@ export default function WhyUsSection() {
       <div className="container">
         <div className="rounded-[12px] border border-[var(--color-bordercol)] bg-white px-5 py-7 shadow-[0_10px_28px_rgba(17,17,17,0.035)] md:px-8">
           <div className="grid gap-5 md:grid-cols-[1fr_1.15fr] md:items-end">
-            <div>
+            <Reveal>
               <p className="label-l1 text-[var(--color-primary-1)]">Why SalonVault?</p>
               <h2 className="heading-h2 mt-3 max-w-[500px]">
                 More Than Just a Website We Build Your <span className="text-[var(--color-primary-1)]">Growth Engine</span>
               </h2>
-            </div>
+            </Reveal>
             <p className="para-p2 max-w-[520px] md:pb-2">
               We understand the beauty industry and create websites that convert visitors into loyal, repeat clients.
             </p>
@@ -120,7 +122,7 @@ export default function WhyUsSection() {
             {reasons.map(({ icon: Icon, title, text }, index) => (
               <article
                 key={title}
-                className={`flex min-h-[190px] flex-col items-center justify-center rounded-[8px] border border-[var(--color-bordercol)] bg-white px-2 py-6 text-center shadow-[0_10px_26px_rgba(17,17,17,0.045)] md:px-5 ${
+                className={`hover-lift flex min-h-[190px] flex-col items-center justify-center rounded-[8px] border border-[var(--color-bordercol)] bg-white px-2 py-6 text-center shadow-[0_10px_26px_rgba(17,17,17,0.045)] md:px-5 ${
                   index === reasons.length - 1 ? "col-span-2 mx-auto w-[48%] lg:col-span-1 lg:w-auto" : ""
                 }`}
               >

@@ -1,4 +1,5 @@
 import { Bot, CalendarCheck, Check, Gauge, Globe2, MessagesSquare, PanelsTopLeft, Search, Settings2, ShieldCheck, Sparkles, UsersRound, Wrench } from "lucide-react";
+import Reveal from "@/components/ui/reveal";
 
 const plans = [
   {
@@ -50,7 +51,7 @@ export default function PricingSection() {
     <section id="pricing" className=" py-6 md:py-8">
       <div className="container">
         <div className="rounded-[12px] border border-[var(--color-bordercol)] bg-[linear-gradient(135deg,#ffffff_0%,#fff8fa_48%,#ffffff_100%)] px-5 py-7 shadow-[0_10px_28px_rgba(17,17,17,0.035)] md:px-8">
-          <div className="mx-auto max-w-[650px] text-center">
+          <Reveal className="mx-auto max-w-[780px] text-center">
             <p className="label-l1 text-[var(--color-primary-1)]">Pricing</p>
             <h2 className="heading-h2 mt-3">
               Simple Packages for <span className="text-[var(--color-primary-1)]">Salon Growth</span>
@@ -58,13 +59,13 @@ export default function PricingSection() {
             <p className="para-p2 mx-auto mt-3 max-w-[520px]">
               Choose a focused website, add a chatbot for more bookings, or build custom software around your salon operations.
             </p>
-          </div>
+          </Reveal>
 
           <div className="mt-7 grid gap-5 lg:grid-cols-3 lg:items-center">
             {plans.map((plan) => (
               <article
                 key={plan.name}
-                className={`relative overflow-hidden rounded-[12px] border px-5 py-6 shadow-[0_16px_40px_rgba(17,17,17,0.055)] md:px-7 ${
+                className={`hover-lift relative overflow-hidden rounded-[12px] border px-5 py-6 shadow-[0_16px_40px_rgba(17,17,17,0.055)] md:px-7 ${
                   plan.featured
                     ? "border-2 border-[var(--color-primary-1)] bg-white lg:scale-[1.045] lg:px-8 lg:py-8 shadow-[0_24px_58px_rgba(232,93,117,0.18)]"
                     : "border-[var(--color-bordercol)] bg-white/80 backdrop-blur"
