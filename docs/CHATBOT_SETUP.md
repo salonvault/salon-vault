@@ -10,6 +10,7 @@ The chatbot is local-first. The browser keeps the conversation and validated lea
 4. Neon atomically prevents another record with the same normalized email and phone.
 5. A new lead receives an immediate response; Airtable and both emails run after the response.
 6. After submission or duplicate detection, the assistant can keep answering relevant follow-up questions through Groq, but extraction, Neon, Airtable, and email operations remain disabled. Attempts to start another inquiry are declined until the two-hour completed-session lock expires.
+7. A server-side scope guard rejects clearly unrelated requests before an LLM call, while the system prompt handles less explicit off-topic requests. The assistant never acts as a general coding, brainstorming, homework, news, or entertainment bot.
 
 ## Neon
 

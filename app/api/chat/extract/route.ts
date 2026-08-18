@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { extractLeadAnswers } from "@/lib/chatbot/extractor";
 import { leadExtractionRequestSchema, normalizeLeadAnswers } from "@/lib/chatbot/schemas";
 import { checkMemoryRateLimit, getRequestFingerprint, hasValidJsonRequest } from "@/lib/chatbot/security";
+import { isClearlyOutOfScope } from "@/lib/chatbot/scope";
 
 export const runtime = "nodejs";
 export const maxDuration = 25;
@@ -15,9 +16,18 @@ export async function POST(request: NextRequest) {
   try {
     const parsed = leadExtractionRequestSchema.safeParse(await request.json());
     if (!parsed.success || parsed.data.website) return NextResponse.json({ error: "Invalid conversation data." }, { status: 400 });
+    const answers = normalizeLeadAnswers(parsed.data.answers);
+    if (isClearlyOutOfScope(parsed.data.messages)) {
+      return NextResponse.json({
+        answers,
+        updatedQuestionIds: [],
+        clearedQuestionIds: [],
+        refusedQuestionIds: [],
+      }, { headers: { "Cache-Control": "no-store" } });
+    }
     const result = await extractLeadAnswers({
       messages: parsed.data.messages,
-      answers: normalizeLeadAnswers(parsed.data.answers),
+      answers,
     });
     return NextResponse.json(result, { headers: { "Cache-Control": "no-store" } });
   } catch (error) {
