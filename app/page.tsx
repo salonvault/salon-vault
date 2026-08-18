@@ -13,6 +13,7 @@ import WorkSection from "@/components/Home/WorkSection"
 import Footer from "@/components/Layout/Footer"
 import Header from "@/components/Layout/Header"
 import WhatsAppFloat from "@/components/Layout/WhatsAppFloat"
+import ChatbotWidget from "@/components/chatbot/ChatbotWidget"
 
 
 function page() {
@@ -33,6 +34,7 @@ function page() {
         <FAQs />
       </main>
       <Footer />
+      <ChatbotWidget />
       <WhatsAppFloat />
     </div>
   )
